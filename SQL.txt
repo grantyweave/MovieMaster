@@ -1,0 +1,16 @@
+IF (EXISTS (SELECT * 
+                 FROM INFORMATION_SCHEMA.TABLES 
+                 WHERE TABLE_SCHEMA = 'dbo' 
+                 AND  TABLE_NAME = 'Movies'))
+BEGIN
+	DROP TABLE Movies
+END
+
+CREATE TABLE Movies
+(
+	Id int,
+	Title NVARCHAR(50) NOT NULL,
+	Genre NVARCHAR(20) NOT NULL,
+	Runtime FLOAT NOT NULL,
+	PRIMARY KEY (Id)
+);
